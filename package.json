@@ -1,6 +1,6 @@
 {
   "name": "ffi-generate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generate FFI Bindings from header file",
   "keywords": ["libclang", "ffi", "bindings"],
   "author": "Timothy J Fontaine <tjfontaine@gmail.com>",
@@ -11,6 +11,6 @@
   "dependencies": {
     "js-beautify": "",
     "optimist": "",
-    "libclang": ">= 0.0.9"
+    "libclang": ">= 0.0.10"
   }
 }
