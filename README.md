@@ -22,7 +22,7 @@ the header (i.e. include paths). To pass options directly to libclang use `--`
 so ffi-generate-node knows to stop parsing arguments, the rest will be passed
 to libclang without modification.
 
-`ffi-generate-node -f /usr/include/ImageMagick/wand/MagickWand.h -l libMagickWand -m wand -p Magick -- $(Magick-config --cflags)`
+`ffi-generate -f /usr/include/ImageMagick/wand/MagickWand.h -l libMagickWand -m wand -p Magick -- $(Magick-config --cflags)`
 
 Generate FFI Bindings Programatically
 -------------------------------------
@@ -39,6 +39,7 @@ exec('llvm-config --includedir', function (fail, out, err) {
     filename: path.join(includedir, 'clang-c', 'Index.h'),
     library: 'libclang',
     prefix: 'clang_', 
+    includes: [includedir],
   });
 
   if (result.unmapped.length > 0) {
