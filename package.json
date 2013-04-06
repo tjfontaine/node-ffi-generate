@@ -1,12 +1,12 @@
 {
   "name": "ffi-generate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate FFI Bindings from header file",
   "keywords": ["libclang", "ffi", "bindings"],
   "author": "Timothy J Fontaine <tjfontaine@gmail.com>",
   "main": "lib/generateffi.js",
   "bin": {
-    "ffi-generate": "bin/ffi-generate-node.js"
+    "ffi-generate": "bin/ffi-generate.js"
   },
   "dependencies": {
     "js-beautify": "",
