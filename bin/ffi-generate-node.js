@@ -65,10 +65,10 @@ tryClang(function (ret) {
     var env = process.env;
     switch (process.platform) {
       case 'darwin':
-        env.DYLD_LIBRARY_PATH = library + ':' + env.DYLD_LIBRARY_PATH || '';
+        env.DYLD_LIBRARY_PATH = library + ':' + (env.DYLD_LIBRARY_PATH || '');
         break;
       default:
-        env.LD_LIBRARY_PATH = library + ':' + env.LD_LIBRARY_PATH || '';
+        env.LD_LIBRARY_PATH = library + ':' + (env.LD_LIBRARY_PATH || '');
         break;
     }
     var c = require('child_process').spawn(process.execPath, process.argv.slice(1), {env:env});
