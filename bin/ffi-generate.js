@@ -23,6 +23,8 @@ function tryClang(cb) {
 
   if (libclang) return cb(true);
 
+  if (process.env.FFI_GENERATE_CHILD) return cb(false);
+
   require('child_process').exec('llvm-config --libdir', function (err, stdout, stderr) {
     if (stdout.trim()) {
       cb(stdout.trim());
@@ -61,8 +63,9 @@ tryClang(function (ret) {
 
   if (ret === true) {
     generate();
-  } else if (library) {
+  } else if (library && ret !== false) {
     var env = process.env;
+    env.FFI_GENERATE_CHILD = '1';
     switch (process.platform) {
       case 'darwin':
         env.DYLD_LIBRARY_PATH = library + ':' + (env.DYLD_LIBRARY_PATH || '');
@@ -78,6 +81,6 @@ tryClang(function (ret) {
       process.exit(code);
     });
   } else {
-    console.error('Unable to load libclang, either specify -L or have llvm-config in your path');
+    console.error('Unable to load libclang, make sure you have 3.2 installed, either specify -L or have llvm-config in your path');
   }
 });

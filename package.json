@@ -1,6 +1,6 @@
 {
   "name": "ffi-generate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate FFI Bindings from header file",
   "keywords": ["libclang", "ffi", "bindings"],
   "author": "Timothy J Fontaine <tjfontaine@gmail.com>",
