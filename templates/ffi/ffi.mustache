@@ -1,0 +1,34 @@
+var FFI = require('ffi'),
+    ArrayType = require('ref-array'),
+    Struct = require('ref-struct'),
+    ref = require('ref');
+
+var voidPtr = ref.refType(ref.types.void);
+
+exports.CONSTANTS = {
+{{#enums}}
+  '{{name}}': {
+    {{#values}}
+      {{name}}: {{value}},
+    {{/values}}
+    {{#values}}
+      '{{value}}': '{{name}}',
+    {{/values}}
+  },
+{{/enums}}
+};
+
+{{#types}}
+var {{name}} = exports.{{name}} = {{type}};
+var {{name}}Ptr = exports.{{name}}Ptr = ref.refType({{name}});
+{{/types}}
+
+exports.{{module}} = new FFI.Library('{{library}}', {
+{{#functions}}
+  {{name}}: [{{result}}, [
+  {{#args}}
+    {{name}},
+  {{/args}}
+  ]],
+{{/functions}}
+});
