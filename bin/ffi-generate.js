@@ -47,7 +47,8 @@ function generate() {
     single_file: argv.x,
   });
 
-  console.log(jsb.js_beautify(ret.serialized));
+  //console.log(jsb.js_beautify(ret.serialized));
+  console.log(ret.serialized);
 
   if (generate.unmapped) {
     process.stderr.write("-------Unmapped-------\r\n");
