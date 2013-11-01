@@ -5,6 +5,7 @@
   "keywords": ["libclang", "ffi", "bindings"],
   "author": "Timothy J Fontaine <tjfontaine@gmail.com>",
   "main": "lib/generateffi.js",
+  "license": "MIT",
   "bin": {
     "ffi-generate": "bin/ffi-generate.js"
   },
