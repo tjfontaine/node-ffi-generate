@@ -1,3 +1,17 @@
+# Forked version of `ffi-generate`
+
+Requires changes in [`libclang`](https://github.com/tjfontaine/node-libclang) to work properly.
+
+- https://github.com/joelpurra/node-libclang/tree/support-elaborated-type
+
+Use this version by [referencing the repository/branch in `package.json`](https://docs.npmjs.com/configuring-npm/package-json.html#github-urls) instead of the [official version published on npm](https://www.npmjs.com/package/ffi-generate).
+
+---
+
+
+
+
+
 `npm install -g ffi-generate`
 
 Generate FFI Bindings
