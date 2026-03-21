@@ -1,3 +1,5 @@
+> **⚠️ This project is archived and no longer maintained.**
+
 `npm install -g ffi-generate`
 
 Generate FFI Bindings
@@ -76,4 +78,3 @@ map a type to ffi type.
    * arg - name of the type that failed to map
    * name - the name of the function that failed
    * decl - the signature of the function that failed
-
